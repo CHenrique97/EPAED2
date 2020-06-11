@@ -40,23 +40,23 @@ def readcsv(filePath):
 
 
 def bfs_connected_component(graph, start):
-    # keep track of all visited nodes
+
     explored = []
-    # keep track of nodes to be checked
+
     queue = [start]
     connectedNeighbours=[]
-    # keep looping until there are nodes still to be checked
+
     while queue:
-        # pop shallowest node (first node) from queue
+
         
         node = queue.pop(0)
         if node not in explored:
-            # add node to list of checked nodes
+
             explored.append(node)
             neighbours = graph[node]
             print(neighbours)
             connectedNeighbours.append(len(neighbours))
-            # add neighbours of node to queue
+
             for neighbour in neighbours:
                 queue.append(neighbour)
     return connectedNeighbours
@@ -79,7 +79,7 @@ def main():
 
     graphFinal=graphMaker(table)
     listGraficoAppended=[]
-    listGrafico=bfs_connected_component(graphFinal, '0')
+    listGrafico=bfs_connected_component(g, 'e')
     
     orderGrafico=pd.DataFrame(listGrafico)
     orderGrafico.to_csv("grafo4.csv")
