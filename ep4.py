@@ -79,7 +79,7 @@ def main():
 
     graphFinal=graphMaker(table)
     listGraficoAppended=[]
-    listGrafico=bfs_connected_component(g, 'e')
+    listGrafico=bfs_connected_component(graphFinal, '0')
     
     orderGrafico=pd.DataFrame(listGrafico)
     orderGrafico.to_csv("grafo4.csv")
